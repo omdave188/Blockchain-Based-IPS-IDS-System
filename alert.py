@@ -11,7 +11,7 @@ from datetime import datetime, timedelta
 from email.mime.text import MIMEText
 from collections import defaultdict
 
-# ✅ Email Configuration
+# Email Configuration
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 ADMIN_EMAIL = "om.d1@ahduni.edu.in"  # Replace with the admin's email
@@ -21,7 +21,7 @@ EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")  # Your email app password
 if not EMAIL_ADDRESS or not EMAIL_PASSWORD:
     raise ValueError("❌ EMAIL_ADDRESS or EMAIL_PASSWORD environment variable not set")
 
-# ✅ Function to send alert email
+# Function to send alert email
 def send_alert_email(unique_id, timestamp):
     system_info = get_system_info()
 
@@ -52,7 +52,7 @@ def send_alert_email(unique_id, timestamp):
     except Exception as e:
         print("❌ Failed to send alert email:", str(e))
 
-# ✅ Function to get system details
+#  Function to get system details
 def get_system_info():
     try:
         # ✅ Hostname and Local IP Address
@@ -119,7 +119,7 @@ def get_system_info():
         return f"⚠️ Error fetching system details: {e}"
 
 
-# ✅ Monitor log file for failed attempts
+#  Monitor log file for failed attempts
 def monitor_log_file(log_file):
     print("🔍 Monitoring log file for failed login attempts...")
 
